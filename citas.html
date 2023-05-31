@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Consulta de Citas</title>
+  <link rel="stylesheet" href="loginsty.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Consulta de Citas</h2>
+    <form>
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="fecha">Fecha:</label>
+        <input type="text" id="fecha" name="fecha" placeholder="Ingrese la fecha" required>
+      </div>
+      <button type="submit" class="buscar-btn">Buscar</button>
+    </form>
+    <div class="resultados">
+      <h3>Resultados de la búsqueda:</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Nombre</th>
+            <th>Apellido P</th>
+            <th>Apellido M</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fecha 1</td>
+            <td>Nombre 1</td>
+            <td>Apellido P 1</td>
+            <td>Apellido M 1</td>
+          </tr>
+          <tr>
+            <td>Fecha 2</td>
+            <td>Nombre 2</td>
+            <td>Apellido P 2</td>
+            <td>Apellido M 2</td>
+          </tr>
+          <!-- Agrega más filas según sea necesario -->
+        </tbody>
+      </table>
+      <div class="acciones">
+        <button class="ver-btn">Ver Receta</button>
+        <button class="descargar-btn">Descargar Receta</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
