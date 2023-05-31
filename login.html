@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--se hace el enlace para css -->
+<link rel="stylesheet" href="loginsty.css"></link>
+<html>
+  <!--ttitulo de la pagina -->
+  <title>Login</title>
+<body>
+  <!--Se hace una clase la cual tendra la caja -->
+  <div class="container">
+    <h2>Iniciar sesion</h2>
+    <form>
+      <div class="form-group">
+        <!--Se hace una clase la cual obtendra rfc el cual es necesario -->
+        <label for="rfc">RFC:</label>
+        <input type="text" id="rfc" name="rfc" placeholder="Ingresa tu RFC" required>
+      </div>
+      <div class="form-group">
+        <!--Se hace una clase la cual obtendra contraseña, la cual es necesaria -->
+        <label for="password">Contrasena:</label>
+        <input type="password" id="password" name="password" placeholder="Ingresa tu contrasena" required>
+      </div>
+      <!--Se coloca el boton -->
+      <button type="submit">Ingresar</button>
+    </form>
+  </div>
+</body>
+</html>

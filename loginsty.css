@@ -1,0 +1,70 @@
+
+body {
+  /*se pone la base del archivo, estableciendo color de fondo y tipografia */
+  font-family: Arial, sans-serif;
+  background-color: #CFFFF8;
+}
+
+.container {
+  /*Se establece el contenedor de la caja para ingresar datos */
+  /*lo maximo que se puede extender*/
+  max-width: 400px;
+  /*El margen de separacion de manera automatica*/
+  margin: 0 auto;
+  /*El largo de los bordes fuera del formulario*/
+  padding: 20px;
+  /*El color del fondo del formulario*/
+  background-color: #fff;
+}
+
+h2 {
+  /*Son las bases de todos los encabezados */
+  /*Texto centrado*/
+  text-align: center;
+  /*la distancia de los botones*/
+  margin-bottom: 20px;
+}
+
+.form-group {
+  /*Se establecen los margenes */
+  /*La distacia entre los componentes*/
+  margin-bottom: 20px;
+}
+
+label {
+  /*Se establecen las caracteristicas de las etiquetas */
+  /*tipo de fuente*/
+  font-weight: bold;
+  /*los margenes*/
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+  /*Se ponen las bases de las cajas en las que se registran los datos */
+  /*lo ancho para expanderse*/
+  width: 90%;
+  /*el tamaño de las cajas que solicita rellenar*/
+  padding: 10px;
+}
+
+button {
+  /*Se establecen las caracteristicas del boton */
+  /*ancho del boton*/
+  width: 30%;
+  /*tamaño del boton*/
+  padding: 10px;
+  /*color base del boton*/
+  background-color: #4c9baf;
+  /*color de la letra del boton*/
+  color: #fff;
+  /*tamaño de la letra*/
+  font-size: 16px;
+  /*que aparezca como mano cuando se esta encima del boton*/
+  cursor: pointer;
+}
+
+button:hover {
+  /*Se establece el color del boton al estar sobre el */
+  background-color: #378a9f;
+}
