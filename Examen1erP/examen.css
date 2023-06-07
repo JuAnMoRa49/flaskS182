@@ -1,0 +1,24 @@
+image{
+    background-image: Examen1erP/aula.jpeg
+    ;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+
+caption{
+    color: #F3FF00;
+    background-color: #007AFF;
+}
+
+th{
+    background-color: #49A0FF ;
+}
+
+td{
+    background-color: #98C9FF;
+}
