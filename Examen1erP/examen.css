@@ -1,7 +1,8 @@
-image{
-    background-image: Examen1erP/aula.jpeg
-    ;
+body{
+    background-image: url("aula.jpeg");
+    background-size: auto;
 }
+
 
 table {
     width: 100%;
