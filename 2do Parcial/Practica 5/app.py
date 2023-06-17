@@ -1,7 +1,7 @@
 # app.py es el lugar donde se realizará toda la configuración del servidor
 
 # importacion de flask
-from flask import Flask
+from flask import Flask, render_template, request
 
 # se declara app y se asigna un nombre, es decir, es la inicialización del servidor Flask
 app = Flask(__name__)
@@ -11,7 +11,7 @@ app.config['MYSQL_HOST']="localhost"
 app.config['MYSQL_USER']="root"
 # se establece la contraseña del usuario que se utilizara
 app.config['MYSQL_PASSWORD']=""
-# se establece la conexion a la base de datos que s eutilizara
+# se establece la conexion a la base de datos que se utilizara
 app.config['MYSQL_DB']="bdflask"
 
 
@@ -22,12 +22,20 @@ app.config['MYSQL_DB']="bdflask"
 @app.route('/')
 #si la ruta existe, regrela index
 def index():
-    return 'Hola mundo'
+    return render_template('index.html')
+
 
 # para poder ejecutar esta funcion, en el link se le agrega /guardar
-@app.route('/guardar')
+@app.route('/guardar', methods=['POST'])
 def guardar():
-    return "Se guardó el album en la BD"
+    if request.method == 'POST':
+        titulo = request.form['txtTitulo']
+        artista = request.form['txtArtista']
+        anio = request.form['txtAnio']
+        print(titulo, artista, anio)
+        return "La info del album llegó a su ruta"
+    
+    return ""
 
 
 # para poder ejecutar esta funcion, en el link se le agrega /eliminar
@@ -36,11 +44,8 @@ def eliminar():
     return "Se eliminó el album de la BD"
 
 
-
 # ejecucion
 if __name__ == '__main__':
     app.run(debug=True, port=8000)
     
     
-
-
