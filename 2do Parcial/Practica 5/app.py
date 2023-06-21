@@ -1,7 +1,8 @@
 # app.py es el lugar donde se realizará toda la configuración del servidor
 
 # importacion de flask
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, flash
+from flask_mysqldb import MySQL
 
 # se declara app y se asigna un nombre, es decir, es la inicialización del servidor Flask
 app = Flask(__name__)
@@ -12,8 +13,11 @@ app.config['MYSQL_USER']="root"
 # se establece la contraseña del usuario que se utilizara
 app.config['MYSQL_PASSWORD']=""
 # se establece la conexion a la base de datos que se utilizara
-app.config['MYSQL_DB']="bdflask"
+app.config['MYSQL_DB']="dbflask"
 
+app.secret_key='mysicretkey'
+
+mysql= MySQL(app)
 
 # se declaró la ruta
 # se declaró la ruta Index, o la ruta principal, http://localhost:5000
@@ -27,15 +31,22 @@ def index():
 
 # para poder ejecutar esta funcion, en el link se le agrega /guardar
 @app.route('/guardar', methods=['POST'])
+
 def guardar():
     if request.method == 'POST':
-        titulo = request.form['txtTitulo']
-        artista = request.form['txtArtista']
-        anio = request.form['txtAnio']
-        print(titulo, artista, anio)
-        return "La info del album llegó a su ruta"
-    
-    return ""
+        Vtitulo = request.form['txtTitulo']
+        Vartista = request.form['txtArtista']
+        Vanio = request.form['txtAnio']
+        #print(titulo, artista, anio)
+        
+        #variable de tipo cursor para almacenar la informacion
+        CS= mysql.connection.cursor()
+        # es el query que se ejecutará para ingresar los datos en la base de datos
+        CS.execute('insert into Albums (titulo, artista, anio) values(%s, %s, %s)',(Vtitulo, Vartista, Vanio))
+        mysql.connection.commit()
+        
+    flash('Album agregado correctamente')
+    return redirect(url_for('index'))
 
 
 # para poder ejecutar esta funcion, en el link se le agrega /eliminar
