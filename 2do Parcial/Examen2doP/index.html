@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vista Flores</title>
+
+</head>
+
+<body>
+    {%with mensajes=get_flashed_messages()%}
+        {% if mensajes%}
+            {% for msj in mensajes%}
+                <h3> {{ msj }} </h3>
+            {% endfor%}
+        {% endif %}
+    {%endwith%}
+    <br>
+    <br>
+    <center><h1>Gestion de Flores</h1></center>
+    <br>
+    <br>
+
+    <form action="/guardar" method="POST">
+        <center>
+        <input type="text" name="txtNombre" placeholder="Nombre de la flor ">
+        <input type="text" name="txtCantidad" placeholder="Cantidad de las flores">
+        <input type="text" name="txtPrecio" placeholder="Precio de las flores">
+    
+        <br>
+        <br>
+        <button type="submit">Guardar</button>
+        </center>
+
+    </form>
+    <br>
+    <br>
+    <h1>Busqueda de Flor</h1>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <input type="text" name=""
+            </tr>
+        </thead>
+    </table>
+</body>
+</html>
+
+
+
