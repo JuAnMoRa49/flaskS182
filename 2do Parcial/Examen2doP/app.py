@@ -20,9 +20,6 @@ app.config['MYSQL_DB']="DB_Floreria"
 
 mysql= MySQL(app)
 
-
-@app.route('/')
-#si la ruta existe, regrela index
 @app.route('/')
 def index():
     curSelect = mysql.connection.cursor()
@@ -30,7 +27,7 @@ def index():
     consulta = curSelect.fetchall()
     curSelect.close()
     
-    return render_template('index.html', listaFlores=consulta)
+    return render_template ('index.html', consulta=consulta)
 
 
 # para poder ejecutar esta funcion, en el link se le agrega /guardar

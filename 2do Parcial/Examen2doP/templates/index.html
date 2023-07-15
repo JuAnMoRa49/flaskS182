@@ -10,13 +10,7 @@
 </head>
 
 <body>
-    {%with mensajes=get_flashed_messages()%}
-        {% if mensajes%}
-            {% for msj in mensajes%}
-                <h3> {{ msj }} </h3>
-            {% endfor%}
-        {% endif %}
-    {%endwith%}
+    
     <br>
     <br>
     <center><h1>Gestion de Flores</h1></center>
@@ -34,19 +28,15 @@
         <button type="submit">Guardar</button>
         </center>
 
-    </form>
-    <br>
-    <br>
-    <h1>Busqueda de Flor</h1>
-    <br>
-    <table>
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <input type="text" name=""
-            </tr>
-        </thead>
-    </table>
+    </form action="/editar" method "POST">
+        <center>
+            <h1>Busqueda de Flor</h1>
+            <br>
+            <tr>Nombre: </tr>
+            <input type="text" name="txtNombre" placeholder="Flor a buscar">
+            <button type="submit">Editar</button>
+        </center>
+    
 </body>
 </html>
 
